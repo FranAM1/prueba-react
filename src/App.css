@@ -1,0 +1,32 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: rgb(0, 255, 234);
+  align-self: center;
+  text-shadow: 0 0 1rem rgb(0, 255, 234);
+}
+
+.cellsContainer{
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cell{
+  color:white;
+  display: flex;
+  font-size: 4rem;
+  padding: 4rem 5rem;
+  background-color: gray;
+  border-radius: 1rem;
+  border: 2px solid white;
+}
