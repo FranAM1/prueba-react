@@ -19,6 +19,7 @@ function App() {
   }
 
   function deleteCell(index: number) {
+    if (cells.length === 2) return
     const nextValue = cells.slice()
     nextValue.splice(index, 1)
     setCells(nextValue)
@@ -52,7 +53,7 @@ function App() {
             >
               <input type="text" maxLength={1} value={cell} onChange={(e) => changeContent(e.currentTarget.value, index)}/>
             </div>   
-            {index < cells.length && 
+            {index < cells.length-1 && 
             <span className= "addCell" onClick={() => addCell(index)}></span>}
             <span className="botonBorrar" onClick={() => deleteCell(index)}>BORRAR</span>
           </div>
