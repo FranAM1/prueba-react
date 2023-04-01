@@ -18,6 +18,12 @@ function App() {
     setCells(nextValue)
   }
 
+  function deleteCell(index: number) {
+    const nextValue = cells.slice()
+    nextValue.splice(index, 1)
+    setCells(nextValue)
+  }
+
   function createString(e: KeyboardEvent) {
     if (e.key !== "Enter") return
 
@@ -48,7 +54,7 @@ function App() {
             </div>   
             {index < cells.length && 
             <span className= "addCell" onClick={() => addCell(index)}></span>}
-            <span className="botonBorrar">BORRAR</span>
+            <span className="botonBorrar" onClick={() => deleteCell(index)}>BORRAR</span>
           </div>
         ))
         }
