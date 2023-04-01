@@ -4,6 +4,8 @@ import './App.css'
 function App() {
   const [cells, setCells] = useState(["A", "B", "C"])
 
+  const [string, setString] = useState("")
+
   function changeContent(newValue: string, index: number) {
     const nextValue = cells.slice()
     nextValue[index] = newValue
@@ -19,7 +21,7 @@ function App() {
   function createString(e: KeyboardEvent) {
     if (e.key !== "Enter") return
 
-    console.log(cells.join(""))
+    setString(cells.join(""))
   }
   
   useEffect(() => {
@@ -37,19 +39,21 @@ function App() {
       <div className="cellsContainer">
         {
         cells.map((cell, index) => (
-          <>
+          <div className="grid">
             <div 
             className={`cell ${cell === "" ? "emptyCell" : ""}`} 
             key={index}
             >
               <input type="text" maxLength={1} value={cell} onChange={(e) => changeContent(e.currentTarget.value, index)}/>
-            </div>
+            </div>   
             {index < cells.length && 
             <span className= "addCell" onClick={() => addCell(index)}></span>}
-          </>
+            <span className="botonBorrar">BORRAR</span>
+          </div>
         ))
         }
       </div>
+      <div className="stringContainer"> {string} </div>
     </>
   )
 }

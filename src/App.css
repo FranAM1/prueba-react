@@ -42,7 +42,7 @@ body{
 .cell > input {
   all: unset;
   font-size: 4rem;
-  width: 50px;
+  width: 60px;
 }
 
 .addCell {
@@ -50,4 +50,36 @@ body{
   color: black;
   height: 200px;
   width: 10px;
+}
+
+.stringContainer {
+  font-size: 4rem;
+  color: rgb(0, 255, 234);
+  text-shadow: 0 0 1rem rgb(0, 255, 234);
+  text-align: center;
+}
+
+.botonBorrar{
+  background-color: rgb(182, 17, 17);
+  color: white;
+  border-radius: 1rem;
+  border: 2px solid white;
+  cursor: pointer;
+  font-size: 2rem;
+  display: grid;
+  padding: 0.5rem;
+  place-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.5s;
+}
+
+.botonBorrar:hover{
+  background-color: rgb(116, 13, 13);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
 }
