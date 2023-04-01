@@ -19,23 +19,35 @@ body{
 .cellsContainer{
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .cell{
   color:white;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 200px;
   background-color: gray;
   border-radius: 1rem;
-  border: 2px solid white;
-  display: grid;
-  place-items: center;
+  border: 4px solid white;
+}
+
+.emptyCell{
+  border-style: dashed;
 }
 
 .cell > input {
   all: unset;
   font-size: 4rem;
   width: 50px;
+}
+
+.addCell {
+  cursor: pointer;
+  color: black;
+  height: 200px;
+  width: 10px;
 }
